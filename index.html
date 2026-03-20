@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>California Dirt Co. — Essential Earth Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:        #001F3F;
+      --navy-mid:    #002a55;
+      --navy-deep:   #001428;
+      --cream:       #F4F1EB;
+      --cream-dim:   #C8C4BC;
+      --cream-muted: #7A7670;
+      --dark:        #09090B;
+      --charcoal:    #18181B;
+      --zinc:        #27272A;
+      --border:      rgba(244,241,235,0.08);
+      --border-mid:  rgba(244,241,235,0.18);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--navy-deep);
+      color: var(--cream);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ─── GRAIN TEXTURE ──────────────── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 200px 200px;
+    }
+
+    /* ─── HEADER ─────────────────────── */
+    header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(0,20,40,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+    }
+
+    .nav-mark { width: 30px; height: 30px; flex-shrink: 0; }
+
+    .nav-wordmark {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 16px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--cream); }
+
+    /* ─── HERO ───────────────────────── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 140px 48px 100px;
+      position: relative;
+      overflow: hidden;
+      background-color: var(--navy);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(244,241,235,0.025) 79px, rgba(244,241,235,0.025) 80px),
+        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(244,241,235,0.025) 79px, rgba(244,241,235,0.025) 80px);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 240px;
+      background: linear-gradient(to top, var(--navy-deep), transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner { position: relative; z-index: 1; max-width: 1000px; }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s forwards;
+    }
+
+    .hero-mark {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 48px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(80px, 14vw, 164px);
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.45s forwards;
+    }
+
+    .hero-title .ghost {
+      display: block;
+      color: rgba(244,241,235,0.07);
+      letter-spacing: 0.03em;
+    }
+
+    .hero-divider {
+      width: 1px;
+      height: 56px;
+      background: linear-gradient(to bottom, var(--cream-muted), transparent);
+      margin: 0 auto 36px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.6s forwards;
+    }
+
+    .hero-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: clamp(15px, 2.5vw, 21px);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cream-dim);
+      margin-bottom: 14px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.7s forwards;
+    }
+
+    .hero-tagline {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      letter-spacing: 0.03em;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.82s forwards;
+    }
+
+    .hero-plain {
+      margin-top: 20px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.28);
+      opacity: 0;
+      animation: fadeUp 0.8s 0.94s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 0.8s 1.2s forwards;
+    }
+
+    .hero-scroll span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.2);
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(244,241,235,0.25), transparent);
+      animation: scrollPulse 2.5s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SOCIAL STRIP ───────────────── */
+    .social-strip {
+      background: var(--charcoal);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    .social-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .social-link:hover { color: var(--cream); }
+    .social-link svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .social-sep { width: 1px; height: 14px; background: var(--border-mid); }
+
+    /* ─── SHARED SECTION STYLES ──────── */
+    section { position: relative; z-index: 1; }
+
+    .section-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+    }
+
+    .section-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--cream-muted);
+      flex-shrink: 0;
+    }
+
+    .section-heading {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    /* ─── MANIFESTO ──────────────────── */
+    .manifesto {
+      padding: 120px 0;
+      background: var(--navy-deep);
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .manifesto-body {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--cream-dim);
+      line-height: 1.85;
+      margin-top: 32px;
+      max-width: 460px;
+    }
+
+    .manifesto-body strong {
+      color: var(--cream);
+      font-weight: 500;
+    }
+
+    .manifesto-authority {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+    }
+
+    .stats-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border-mid);
+      border: 1px solid var(--border-mid);
+    }
+
+    .stat-cell {
+      background: var(--charcoal);
+      padding: 40px 36px;
+      transition: background 0.25s;
+    }
+
+    .stat-cell:hover { background: var(--zinc); }
+
+    .stat-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 54px;
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .stat-num sup { font-size: 22px; vertical-align: super; }
+
+    .stat-lbl {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+    }
+
+    /* ─── PLATFORM STRIP ─────────────── */
+    .platform-strip {
+      padding: 80px 0;
+      background: var(--navy);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .strip-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+
+    .strip-item {
+      padding: 0 48px;
+      border-right: 1px solid var(--border-mid);
+    }
+
+    .strip-item:first-child { padding-left: 0; }
+    .strip-item:last-child  { border-right: none; }
+
+    .strip-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 60px;
+      line-height: 1;
+      color: rgba(244,241,235,0.05);
+      margin-bottom: 16px;
+    }
+
+    .strip-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    .strip-body {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.75;
+    }
+
+    .strip-grit {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      opacity: 0.6;
+    }
+
+    /* ─── COMPANIES ──────────────────── */
+    .companies {
+      padding: 120px 0;
+      background: var(--charcoal);
+    }
+
+    .companies-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 32px;
+    }
+
+    .companies-desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      max-width: 360px;
+      line-height: 1.7;
+    }
+
+    .companies-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border-mid);
+      border: 1px solid var(--border-mid);
+    }
+
+    .company-card {
+      background: var(--dark);
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+
+    .company-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      transform: scaleY(0);
+      transform-origin: bottom;
+      transition: transform 0.35s;
+      background: var(--cream);
+    }
+
+    .company-card:hover { background: var(--navy); }
+    .company-card:hover::before { transform: scaleY(1); }
+    .company-card:hover .company-name { color: var(--cream); }
+    .company-card:hover .company-desc { color: var(--cream-dim); }
+    .company-card:hover .card-link { color: var(--cream); }
+    .company-card:hover .status-chip { border-color: rgba(244,241,235,0.15); color: rgba(244,241,235,0.45); background: transparent; }
+    .company-card:hover .status-chip.active { color: #7EC8A0; background: rgba(126,200,160,0.08); border-color: rgba(126,200,160,0.25); }
+    .company-card:hover .brand-sub { color: rgba(244,241,235,0.25); }
+
+    /* Regional accent lines */
+    .company-card[data-region="temecula"]:hover::before { background: #FF6B35; }
+    .company-card[data-region="oc"]:hover::before       { background: #4A90A4; }
+    .company-card[data-region="sd"]:hover::before       { background: #C8A96E; }
+    .company-card[data-region="nc"]:hover::before       { background: #7A9E5A; }
+    .company-card[data-region="ie"]:hover::before       { background: #8B3A3A; }
+    .company-card[data-region="la"]:hover::before       { background: #C4A35A; }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .company-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 21px;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: var(--cream);
+      transition: color 0.3s;
+    }
+
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.3s;
+    }
+
+    .status-chip::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+      flex-shrink: 0;
+    }
+
+    .status-chip.active    { color: #7EC8A0; border-color: rgba(126,200,160,0.3); background: rgba(126,200,160,0.08); }
+    .status-chip.serving   { color: #7EB8D4; border-color: rgba(126,184,212,0.3); background: rgba(126,184,212,0.08); }
+    .status-chip.expanding { color: var(--cream-muted); border-color: var(--border-mid); background: transparent; }
+
+    .company-desc {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      line-height: 1.65;
+      flex-grow: 1;
+      transition: color 0.3s;
+    }
+
+    .brand-sub {
+      display: block;
+      margin-top: 8px;
+      font-size: 11px;
+      font-weight: 500;
+      font-style: italic;
+      color: rgba(244,241,235,0.2);
+      transition: color 0.3s;
+    }
+
+    .card-link {
+      display: flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      transition: color 0.3s;
+      line-height: 1;
+    }
+
+    .card-link svg {
+      width: 11px; height: 11px;
+      min-width: 11px; min-height: 11px;
+      flex-shrink: 0; display: block;
+      transition: transform 0.2s;
+    }
+
+    .company-card:hover .card-link svg { transform: translate(2px,-2px); }
+
+    /* ─── FOOTER ─────────────────────── */
+    footer {
+      background: var(--navy-deep);
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 48px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .footer-mark { width: 34px; height: 34px; opacity: 0.5; }
+
+    .footer-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 19px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cream);
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--cream-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .footer-copy {
+      margin-top: 16px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.18);
+    }
+
+    .footer-right {
+      text-align: right;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.18);
+      line-height: 1.8;
+    }
+
+    /* ─── RESPONSIVE ─────────────────── */
+    @media (max-width: 1024px) {
+      .companies-grid { grid-template-columns: repeat(2,1fr); }
+      .manifesto-grid { grid-template-columns: 1fr; gap: 56px; }
+      .strip-grid     { grid-template-columns: 1fr; gap: 0; }
+      .strip-item     { border-right: none; border-bottom: 1px solid var(--border-mid); padding: 0 0 48px; margin-bottom: 48px; }
+      .strip-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+      .strip-item:first-child { padding-left: 0; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner, .footer-inner { padding: 0 24px; }
+      .nav-links { display: none; }
+      .social-inner, .section-inner, .strip-grid { padding: 0 24px; }
+      .hero { padding: 120px 24px 80px; }
+      .manifesto, .companies { padding: 80px 0; }
+      .companies-grid { grid-template-columns: 1fr; }
+      .companies-header { flex-direction: column; align-items: flex-start; }
+      .stats-block { grid-template-columns: 1fr 1fr; }
+      .footer-right { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg class="nav-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="37" height="37" stroke="#F4F1EB" stroke-width="2"/>
+          <polygon points="5,11 35,11 35,16 27,16 22,19 5,19" fill="#F4F1EB"/>
+          <polygon points="5,22 33,22 35,22 35,27 26,27 21,30 5,30" fill="#F4F1EB"/>
+          <polygon points="5,33 35,33 35,38 28,38 23,40 5,40" fill="#F4F1EB" opacity="0.45"/>
+        </svg>
+        <span class="nav-wordmark">California Dirt Co.</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#companies">Our Companies</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#b1d8dfd7def1d2d0ddd8d7dec3dfd8d0d5d8c3c5d2de9fd2dedc">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Established in California</p>
+      <svg class="hero-mark" viewBox="0 0 88 88" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="84" height="84" stroke="#F4F1EB" stroke-width="2.5"/>
+        <polygon points="8,20 80,20 80,29 62,29 52,35 8,35" fill="#F4F1EB"/>
+        <polygon points="8,41 77,41 80,41 80,50 61,50 51,56 8,56" fill="#F4F1EB"/>
+        <polygon points="8,62 80,62 80,71 63,71 53,76 8,76" fill="#F4F1EB" opacity="0.4"/>
+      </svg>
+      <h1 class="hero-title">
+        California<span class="ghost">Dirt Co.</span>
+      </h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Essential Earth Solutions</p>
+      <p class="hero-tagline">A network of regional earthwork companies across California</p>
+      <p class="hero-plain">Excavation, grading, and hauling — at scale.</p>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <div class="social-strip">
+    <div class="social-inner">
+      <a href="https://instagram.com/californiadirtco" target="_blank" rel="noopener" class="social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+        </svg>
+        Instagram
+      </a>
+      <div class="social-sep"></div>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/>
+          <rect x="2" y="9" width="4" height="12"/>
+          <circle cx="4" cy="4" r="2"/>
+        </svg>
+        LinkedIn
+      </a>
+      <div class="social-sep"></div>
+      <a href="/cdn-cgi/l/email-protection#751c1b131a351614191c131a071b1c14111c0701161a5b161a18" class="social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        Email
+      </a>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="manifesto" id="about">
+    <div class="section-inner">
+      <div class="manifesto-grid">
+        <div>
+          <p class="section-tag">Who We Are</p>
+          <h2 class="section-heading">Statewide<br>Reach.<br>Local Roots.</h2>
+          <p class="manifesto-body">California Dirt Co. is a parent organization building a network of <strong>specialized regional earthwork companies</strong> across the state — combining the accountability of local operators with the resources of a unified platform.</p>
+          <p class="manifesto-body" style="margin-top:16px;">Built to scale across California's most active construction markets.</p>
+          <p class="manifesto-authority">One system. Six regions. Zero compromise.</p>
+        </div>
+        <div>
+          <div class="stats-block">
+            <div class="stat-cell">
+              <div class="stat-num">6<sup>+</sup></div>
+              <div class="stat-lbl">Regional Companies</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">CA</div>
+              <div class="stat-lbl">Statewide Coverage</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">2</div>
+              <div class="stat-lbl">Active Markets</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-num">4<sup>+</sup></div>
+              <div class="stat-lbl">Expanding Regions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM STRIP -->
+  <div class="platform-strip">
+    <div class="strip-grid">
+      <div class="strip-item">
+        <div class="strip-num">01</div>
+        <div class="strip-title">Operator Network</div>
+        <p class="strip-body">Regional operators run their markets. The platform provides the brand, systems, and standards. Local accountability. Unified scale.</p>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">02</div>
+        <div class="strip-title">Institutional Brand</div>
+        <p class="strip-body">One mark. One system. Every regional company carries the same DNA. Built to be recognized across California's most competitive markets.</p>
+      </div>
+      <div class="strip-item">
+        <div class="strip-num">03</div>
+        <div class="strip-title">Built to Scale</div>
+        <p class="strip-body">The architecture supports infinite regional expansion. Each new market strengthens the whole. This is a platform, not a contractor.</p>
+        <p class="strip-grit">We move dirt. At scale.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPANIES -->
+  <section class="companies" id="companies">
+    <div class="section-inner">
+      <div class="companies-header">
+        <div>
+          <p class="section-tag">Portfolio</p>
+          <h2 class="section-heading">Our Companies</h2>
+        </div>
+        <p class="companies-desc">Each regional company operates independently under a shared standard of quality, safety, and execution.</p>
+      </div>
+      <div class="companies-grid">
+
+        <a href="https://www.tvdirtco.com" target="_blank" rel="noopener" class="company-card" data-region="temecula">
+          <div class="card-top">
+            <div class="company-name">Temecula Valley<br>Dirt Co.</div>
+            <span class="status-chip active">Active</span>
+          </div>
+          <p class="company-desc">Excavation, dirt work, and hauling in Temecula and surrounding areas.<span class="brand-sub">A California Dirt Co. company.</span></p>
+          <div class="card-link">Visit Site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></div>
+        </a>
+
+        <a href="https://www.tvdirtco.com/orange-county.html" target="_blank" rel="noopener" class="company-card" data-region="oc">
+          <div class="card-top">
+            <div class="company-name">Orange County<br>Dirt Co.</div>
+            <span class="status-chip serving">Serving</span>
+          </div>
+          <p class="company-desc">Excavation and dirt services across Orange County.<span class="brand-sub">A California Dirt Co. company.</span></p>
+          <div class="card-link">Visit Site <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></div>
+        </a>
+
+        <a href="#" class="company-card" data-region="sd">
+          <div class="card-top">
+            <div class="company-name">San Diego<br>Dirt Co.</div>
+            <span class="status-chip expanding">Expanding</span>
+          </div>
+          <p class="company-desc">Regional coverage across San Diego County.<span class="brand-sub">A California Dirt Co. company.</span></p>
+          <div class="card-link">Coming Soon <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></div>
+        </a>
+
+        <a href="#" class="company-card" data-region="nc">
+          <div class="card-top">
+            <div class="company-name">North County<br>Dirt Co.</div>
+            <span class="status-chip expanding">Expanding</span>
+          </div>
+          <p class="company-desc">Serving North San Diego County.<span class="brand-sub">A California Dirt Co. company.</span></p>
+          <div class="card-link">Coming Soon <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></div>
+        </a>
+
+        <a href="#" class="company-card" data-region="ie">
+          <div class="card-top">
+            <div class="company-name">Inland Empire<br>Dirt Co.</div>
+            <span class="status-chip expanding">Expanding</span>
+          </div>
+          <p class="company-desc">Coverage across Riverside and San Bernardino.<span class="brand-sub">A California Dirt Co. company.</span></p>
+          <div class="card-link">Coming Soon <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></div>
+        </a>
+
+        <a href="#" class="company-card" data-region="la">
+          <div class="card-top">
+            <div class="company-name">Los Angeles<br>Dirt Co.</div>
+            <span class="status-chip expanding">Expanding</span>
+          </div>
+          <p class="company-desc">Greater Los Angeles area coverage.<span class="brand-sub">A California Dirt Co. company.</span></p>
+          <div class="card-link">Coming Soon <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <svg class="footer-mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1.5" y="1.5" width="37" height="37" stroke="#F4F1EB" stroke-width="2"/>
+            <polygon points="5,11 35,11 35,16 27,16 22,19 5,19" fill="#F4F1EB"/>
+            <polygon points="5,22 33,22 35,22 35,27 26,27 21,30 5,30" fill="#F4F1EB"/>
+            <polygon points="5,33 35,33 35,38 28,38 23,40 5,40" fill="#F4F1EB" opacity="0.4"/>
+          </svg>
+          <span class="footer-name">California Dirt Co.</span>
+        </div>
+        <p class="footer-tagline">Essential Earth Solutions</p>
+        <p class="footer-copy">© 2026 California Dirt Co. — All Rights Reserved</p>
+      </div>
+      <div class="footer-right">
+        Building Cali
