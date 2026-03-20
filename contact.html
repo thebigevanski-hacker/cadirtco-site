@@ -102,6 +102,81 @@
 
     .nav-links a:hover { color: var(--cream); }
     .nav-links a.active { color: var(--cream); }
+    /* ─── HAMBURGER ──────────────────── */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      z-index: 200;
+      flex-shrink: 0;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 1.5px;
+      background: var(--cream);
+      transition: transform 0.3s, opacity 0.3s, width 0.3s;
+      transform-origin: center;
+    }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 64px; left: 0; right: 0; bottom: 0;
+      background: var(--navy-deep);
+      z-index: 99;
+      flex-direction: column;
+      padding: 48px 32px;
+      border-top: 1px solid var(--border);
+      opacity: 0;
+      transform: translateY(-8px);
+      transition: opacity 0.25s, transform 0.25s;
+      pointer-events: none;
+    }
+    .mobile-menu.open { opacity: 1; transform: translateY(0); pointer-events: all; }
+    .mobile-nav-links { list-style: none; margin-bottom: 48px; }
+    .mobile-nav-links li { border-bottom: 1px solid var(--border); }
+    .mobile-nav-links a {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--cream);
+      text-decoration: none;
+      padding: 20px 0;
+      transition: color 0.2s, padding-left 0.2s;
+    }
+    .mobile-nav-links a:hover { color: var(--cream-dim); padding-left: 8px; }
+    .mobile-menu-footer { margin-top: auto; }
+    .mobile-menu-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      margin-bottom: 12px;
+    }
+    .mobile-menu-brand {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(244,241,235,0.2);
+    }
+    .nav-links a.active { color: var(--cream); }
 
     /* ─── PAGE ─── */
     .page {
@@ -532,6 +607,8 @@
       .page { padding: 120px 24px 80px; }
       .nav-inner, .footer-inner { padding: 0 24px; }
       .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .mobile-menu { display: flex; }
       .form-block { padding: 32px 24px; }
       .form-row { grid-template-columns: 1fr; }
       .statement { padding: 32px 24px; margin-top: 48px; }
@@ -558,9 +635,25 @@
           <li><a href="/#about">About</a></li>
           <li><a href="/contact.html" class="active">Contact</a></li>
         </ul>
+        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
     </div>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a href="/#companies" onclick="closeMenu()">Our Companies</a></li>
+      <li><a href="/#about" onclick="closeMenu()">About</a></li>
+      <li><a href="/contact.html" onclick="closeMenu()">Contact</a></li>
+    </ul>
+    <div class="mobile-menu-footer">
+      <p class="mobile-menu-tag">Essential Earth Solutions</p>
+      <p class="mobile-menu-brand">California Dirt Co.</p>
+    </div>
+  </div>
 
   <!-- PAGE -->
   <div class="page">
@@ -634,7 +727,7 @@
 
           <div class="info-block">
             <div class="info-label">General Inquiries</div>
-            <a href="mailto:evan@tvdirtco.com" class="info-value">info@californiadirtco.com</a>
+            <a href="/cdn-cgi/l/email-protection#ef8a998e81af9b998b869d9b8c80c18c8082" class="info-value"><span class="__cf_email__" data-cfemail="244d4a424b644745484d424b564a4d45404d5650474b0a474b49">[email&#160;protected]</span></a>
             <p class="info-detail">For partnership, operator, and expansion inquiries. We respond within one business day.</p>
           </div>
 
@@ -740,7 +833,7 @@
     </div>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     function handleSubmit(e) {
       e.preventDefault();
       const form = document.getElementById('contact-form');
@@ -766,15 +859,4 @@
       );
 
       // Open mailto
-      window.location.href = 'mailto:evan@tvdirtco.com?subject=' + subject + '&body=' + body;
-
-      // Show success state after short delay
-      setTimeout(() => {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }, 500);
-    }
-  </script>
-
-</body>
-</html>
+      window.location.href = 'mailto:evan@tvdir
