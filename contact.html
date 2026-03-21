@@ -664,44 +664,59 @@
 
       <div class="contact-grid">
 
-        <!-- FORM -->
-        <div class="form-block">
-          <div class="form-title">Send a Message</div>
-          <p class="form-sub">For partnership inquiries, operator opportunities, and regional expansion questions.</p>
+       <!-- FORM -->
+<div class="form-block">
+  <div class="form-title">Send a Message</div>
+  <p class="form-sub">
+    For partnership inquiries, operator opportunities, and regional expansion questions.
+  </p>
 
-          <form id="contact-form" onsubmit="handleSubmit(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="fname">First Name</label>
-                <input type="text" id="fname" name="fname" placeholder="First" required />
-              </div>
-              <div class="form-group">
-                <label for="lname">Last Name</label>
-                <input type="text" id="lname" name="lname" placeholder="Last" required />
-              </div>
-            </div>
+  <form action="https://formspree.io/f/mdawvepz" method="POST">
+    
+    <!-- Hidden config -->
+    <input type="hidden" name="_subject" value="New Inquiry - TV Dirt Co">
 
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@company.com" required />
-            </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="First Name" placeholder="First" required />
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="Last Name" placeholder="Last" required />
+      </div>
+    </div>
 
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" />
-            </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email" placeholder="you@company.com" required />
+    </div>
 
-            <div class="form-group">
-              <label for="inquiry">Inquiry Type</label>
-              <select id="inquiry" name="inquiry" required>
-                <option value="" disabled selected>Select one</option>
-                <option value="operator">Operator / Partnership Opportunity</option>
-                <option value="regional">Regional Expansion Inquiry</option>
-                <option value="investor">Investor Relations</option>
-                <option value="media">Media / Press</option>
-                <option value="general">General Inquiry</option>
-              </select>
-            </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="Phone" placeholder="(555) 000-0000" />
+    </div>
+
+    <div class="form-group">
+      <label for="inquiry">Inquiry Type</label>
+      <select id="inquiry" name="Inquiry Type" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="Operator / Partnership Opportunity">Operator / Partnership Opportunity</option>
+        <option value="Regional Expansion Inquiry">Regional Expansion Inquiry</option>
+        <option value="Investor Relations">Investor Relations</option>
+        <option value="Media / Press">Media / Press</option>
+        <option value="General Inquiry">General Inquiry</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" rows="4" placeholder="How can we help?" required></textarea>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
 
             <div class="form-group">
               <label for="message">Message</label>
@@ -725,11 +740,17 @@
         <!-- RIGHT COLUMN -->
         <div class="contact-info">
 
-          <div class="info-block">
-            <div class="info-label">General Inquiries</div>
-            <a href="/cdn-cgi/l/email-protection#ef8a998e81af9b998b869d9b8c80c18c8082" class="info-value"><span class="__cf_email__" data-cfemail="244d4a424b644745484d424b564a4d45404d5650474b0a474b49">[email&#160;protected]</span></a>
-            <p class="info-detail">For partnership, operator, and expansion inquiries. We respond within one business day.</p>
-          </div>
+  <div class="info-block">
+    <div class="info-label">General Inquiries</div>
+    <a href="mailto:info@tvdirtco.com" class="info-value">
+      info@californiadirtco.com
+    </a>
+    <p class="info-detail">
+      For partnership, operator, and expansion inquiries. We respond within one business day.
+    </p>
+  </div>
+
+</div>
 
           <div class="info-block">
             <div class="info-label">Headquarters</div>
