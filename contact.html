@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact — California Dirt Co.</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png" />
-  <link rel="manifest" href="assets/favicon/site.webmanifest" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Contact California Dirt Co.</title>
+
+  <meta name="description" content="Contact California Dirt Co. about regional partnerships, operator opportunities, expansion, and corporate inquiries.">
+
+  <link rel="canonical" href="https://www.californiadirtco.com/contact.html">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contact California Dirt Co.">
+  <meta property="og:description" content="Contact California Dirt Co. about regional partnerships, operator opportunities, expansion, and corporate inquiries.">
+  <meta property="og:url" content="https://www.californiadirtco.com/contact.html">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact California Dirt Co.">
+  <meta name="twitter:description" content="Contact California Dirt Co. about regional partnerships, operator opportunities, expansion, and corporate inquiries.">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/caldirtco-mark-cream.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --navy:        #001F3F;
-      --navy-deep:   #001428;
-      --cream:       #F4F1EB;
-      --cream-dim:   #C8C4BC;
+      --navy: #001F3F;
+      --navy-deep: #001428;
+      --cream: #F4F1EB;
+      --cream-dim: #C8C4BC;
       --cream-muted: #7A7670;
-      --dark:        #09090B;
-      --charcoal:    #18181B;
-      --zinc:        #27272A;
-      --border:      rgba(244,241,235,0.08);
-      --border-mid:  rgba(244,241,235,0.18);
+      --dark: #09090B;
+      --charcoal: #18181B;
+      --zinc: #27272A;
+      --border: rgba(244,241,235,0.08);
+      --border-mid: rgba(244,241,235,0.18);
       --accent-temecula: #FF6B35;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background-color: var(--navy-deep);
@@ -40,7 +62,8 @@
       min-height: 100vh;
     }
 
-    /* Grain texture */
+    /* ─── GRAIN ─── */
+
     body::after {
       content: '';
       position: fixed;
@@ -54,9 +77,12 @@
     }
 
     /* ─── HEADER ─── */
+
     header {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       background: rgba(0,20,40,0.88);
       backdrop-filter: blur(16px);
@@ -81,7 +107,11 @@
       text-decoration: none;
     }
 
-    .nav-mark { width: 30px; height: 30px; flex-shrink: 0; }
+    .nav-mark {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+    }
 
     .nav-wordmark {
       font-family: 'Barlow Condensed', sans-serif;
@@ -92,7 +122,12 @@
       color: var(--cream);
     }
 
-    .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      list-style: none;
+    }
 
     .nav-links a {
       font-family: 'Barlow Condensed', sans-serif;
@@ -105,9 +140,13 @@
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--cream); }
-    .nav-links a.active { color: var(--cream); }
-    /* ─── HAMBURGER ──────────────────── */
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--cream);
+    }
+
+    /* ─── HAMBURGER ─── */
+
     .nav-hamburger {
       display: none;
       flex-direction: column;
@@ -122,6 +161,7 @@
       z-index: 200;
       flex-shrink: 0;
     }
+
     .nav-hamburger span {
       display: block;
       width: 24px;
@@ -130,13 +170,27 @@
       transition: transform 0.3s, opacity 0.3s, width 0.3s;
       transform-origin: center;
     }
-    .nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
-    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    .nav-hamburger.open span:nth-child(1) {
+      transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .nav-hamburger.open span:nth-child(2) {
+      opacity: 0;
+      width: 0;
+    }
+
+    .nav-hamburger.open span:nth-child(3) {
+      transform: translateY(-6.5px) rotate(-45deg);
+    }
+
     .mobile-menu {
       display: none;
       position: fixed;
-      top: 64px; left: 0; right: 0; bottom: 0;
+      top: 64px;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: var(--navy-deep);
       z-index: 99;
       flex-direction: column;
@@ -147,9 +201,22 @@
       transition: opacity 0.25s, transform 0.25s;
       pointer-events: none;
     }
-    .mobile-menu.open { opacity: 1; transform: translateY(0); pointer-events: all; }
-    .mobile-nav-links { list-style: none; margin-bottom: 48px; }
-    .mobile-nav-links li { border-bottom: 1px solid var(--border); }
+
+    .mobile-menu.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    .mobile-nav-links {
+      list-style: none;
+      margin-bottom: 48px;
+    }
+
+    .mobile-nav-links li {
+      border-bottom: 1px solid var(--border);
+    }
+
     .mobile-nav-links a {
       display: block;
       font-family: 'Barlow Condensed', sans-serif;
@@ -162,8 +229,16 @@
       padding: 20px 0;
       transition: color 0.2s, padding-left 0.2s;
     }
-    .mobile-nav-links a:hover { color: var(--cream-dim); padding-left: 8px; }
-    .mobile-menu-footer { margin-top: auto; }
+
+    .mobile-nav-links a:hover {
+      color: var(--cream-dim);
+      padding-left: 8px;
+    }
+
+    .mobile-menu-footer {
+      margin-top: auto;
+    }
+
     .mobile-menu-tag {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 600;
@@ -173,6 +248,7 @@
       color: var(--cream-muted);
       margin-bottom: 12px;
     }
+
     .mobile-menu-brand {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
@@ -181,9 +257,9 @@
       text-transform: uppercase;
       color: rgba(244,241,235,0.2);
     }
-    .nav-links a.active { color: var(--cream); }
 
     /* ─── PAGE ─── */
+
     .page {
       min-height: 100vh;
       padding: 140px 48px 100px;
@@ -191,21 +267,34 @@
       overflow: hidden;
     }
 
-    /* Grid background */
     .page::before {
       content: '';
       position: absolute;
       inset: 0;
       background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(244,241,235,0.025) 79px, rgba(244,241,235,0.025) 80px),
-        repeating-linear-gradient(90deg, transparent, transparent 79px, rgba(244,241,235,0.025) 79px, rgba(244,241,235,0.025) 80px);
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 79px,
+          rgba(244,241,235,0.025) 79px,
+          rgba(244,241,235,0.025) 80px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent,
+          transparent 79px,
+          rgba(244,241,235,0.025) 79px,
+          rgba(244,241,235,0.025) 80px
+        );
       pointer-events: none;
     }
 
     .page::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 200px;
       background: linear-gradient(to top, var(--navy-deep), transparent);
       pointer-events: none;
@@ -219,7 +308,8 @@
       z-index: 1;
     }
 
-    /* ─── HEADER BLOCK ─── */
+    /* ─── PAGE HEADER ─── */
+
     .page-tag {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
@@ -263,6 +353,7 @@
     }
 
     /* ─── CONTACT GRID ─── */
+
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -273,6 +364,7 @@
     }
 
     /* ─── FORM ─── */
+
     .form-block {
       background: var(--charcoal);
       border: 1px solid var(--border-mid);
@@ -307,8 +399,6 @@
       margin-bottom: 20px;
     }
 
-    .form-group.full { grid-column: 1 / -1; }
-
     label {
       display: block;
       font-family: 'Barlow Condensed', sans-serif;
@@ -320,7 +410,9 @@
       margin-bottom: 8px;
     }
 
-    input, textarea, select {
+    input,
+    textarea,
+    select {
       width: 100%;
       background: var(--zinc);
       border: 1px solid var(--border-mid);
@@ -336,7 +428,10 @@
     }
 
     input::placeholder,
-    textarea::placeholder { color: var(--cream-muted); opacity: 0.5; }
+    textarea::placeholder {
+      color: var(--cream-muted);
+      opacity: 0.5;
+    }
 
     input:focus,
     textarea:focus,
@@ -353,9 +448,15 @@
       padding-right: 44px;
     }
 
-    select option { background: var(--zinc); color: var(--cream); }
+    select option {
+      background: var(--zinc);
+      color: var(--cream);
+    }
 
-    textarea { resize: vertical; min-height: 120px; }
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
 
     .form-submit {
       width: 100%;
@@ -380,39 +481,7 @@
       border-color: var(--cream);
     }
 
-    /* Success state */
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 48px 32px;
-    }
-
-    .form-success svg {
-      width: 48px;
-      height: 48px;
-      margin: 0 auto 20px;
-      display: block;
-    }
-
-    .form-success-title {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 900;
-      font-size: 28px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--cream);
-      margin-bottom: 12px;
-    }
-
-    .form-success-body {
-      font-size: 15px;
-      font-weight: 300;
-      color: var(--cream-muted);
-      line-height: 1.7;
-    }
-
     /* ─── RIGHT COLUMN ─── */
-    .contact-info { }
 
     .info-block {
       margin-bottom: 48px;
@@ -460,7 +529,9 @@
       transition: color 0.2s;
     }
 
-    a.info-value:hover { color: var(--cream-dim); }
+    a.info-value:hover {
+      color: var(--cream-dim);
+    }
 
     .info-detail {
       font-size: 14px;
@@ -469,8 +540,11 @@
       line-height: 1.7;
     }
 
-    /* Regional companies in contact right col */
-    .regional-list { list-style: none; }
+    /* ─── REGIONAL COMPANIES ─── */
+
+    .regional-list {
+      list-style: none;
+    }
 
     .regional-item {
       display: flex;
@@ -481,7 +555,9 @@
       gap: 16px;
     }
 
-    .regional-item:last-child { border-bottom: none; }
+    .regional-item:last-child {
+      border-bottom: none;
+    }
 
     .regional-name {
       font-family: 'Barlow Condensed', sans-serif;
@@ -507,7 +583,9 @@
       flex-shrink: 0;
     }
 
-    .regional-link:hover { color: var(--cream); }
+    .regional-link:hover {
+      color: var(--cream);
+    }
 
     .regional-link svg {
       width: 10px;
@@ -523,7 +601,18 @@
       flex-shrink: 0;
     }
 
-    /* Statement block */
+    .regional-status {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cream-muted);
+      flex-shrink: 0;
+    }
+
+    /* ─── STATEMENT ─── */
+
     .statement {
       background: var(--navy);
       padding: 40px 48px;
@@ -548,11 +637,12 @@
       font-weight: 300;
       color: var(--cream-muted);
       margin-top: 16px;
-      max-width: 480px;
+      max-width: 560px;
       line-height: 1.7;
     }
 
     /* ─── FOOTER ─── */
+
     footer {
       background: var(--navy-deep);
       padding: 48px 0;
@@ -578,7 +668,11 @@
       gap: 12px;
     }
 
-    .footer-mark { width: 28px; height: 28px; opacity: 0.4; }
+    .footer-mark {
+      width: 28px;
+      height: 28px;
+      opacity: 0.4;
+    }
 
     .footer-name {
       font-family: 'Barlow Condensed', sans-serif;
@@ -598,281 +692,689 @@
       color: rgba(244,241,235,0.18);
     }
 
+    /* ─── ANIMATION ─── */
+
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* ─── RESPONSIVE ─── */
+
     @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
     }
 
     @media (max-width: 640px) {
-      .page { padding: 120px 24px 80px; }
-      .nav-inner, .footer-inner { padding: 0 24px; }
-      .nav-links { display: none; }
-      .nav-hamburger { display: flex; }
-      .mobile-menu { display: flex; }
-      .form-block { padding: 32px 24px; }
-      .form-row { grid-template-columns: 1fr; }
-      .statement { padding: 32px 24px; margin-top: 48px; }
+      .page {
+        padding: 120px 24px 80px;
+      }
+
+      .nav-inner,
+      .footer-inner {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .mobile-menu {
+        display: flex;
+      }
+
+      .form-block {
+        padding: 32px 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .statement {
+        padding: 32px 24px;
+        margin-top: 48px;
+      }
+
+      .regional-name {
+        font-size: 13px;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- NAV -->
   <header>
     <div class="nav-inner">
-      <a href="/" class="nav-logo">
-        <img src="assets/images/caldirtco-mark-cream.svg" class="nav-mark" alt="California Dirt Co." />
+
+      <a href="/" class="nav-logo" aria-label="California Dirt Co. home">
+        <img
+          src="assets/images/caldirtco-mark-cream.svg"
+          class="nav-mark"
+          alt="California Dirt Co."
+        >
         <span class="nav-wordmark">California Dirt Co.</span>
       </a>
-      <nav>
+
+      <nav aria-label="Primary navigation">
         <ul class="nav-links">
-          <li><a href="/#companies">Our Companies</a></li>
-          <li><a href="/#about">About</a></li>
-          <li><a href="/contact.html" class="active">Contact</a></li>
+          <li>
+            <a href="/#companies">Our Companies</a>
+          </li>
+          <li>
+            <a href="/#about">About</a>
+          </li>
+          <li>
+            <a href="/contact.html" class="active">Contact</a>
+          </li>
         </ul>
-        <button class="nav-hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
+
+        <button
+          class="nav-hamburger"
+          id="hamburger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </nav>
+
     </div>
   </header>
 
+
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobile-menu">
+
     <ul class="mobile-nav-links">
-      <li><a href="/#companies" onclick="closeMenu()">Our Companies</a></li>
-      <li><a href="/#about" onclick="closeMenu()">About</a></li>
-      <li><a href="/contact.html" onclick="closeMenu()">Contact</a></li>
+      <li>
+        <a href="/#companies">Our Companies</a>
+      </li>
+      <li>
+        <a href="/#about">About</a>
+      </li>
+      <li>
+        <a href="/contact.html">Contact</a>
+      </li>
     </ul>
+
     <div class="mobile-menu-footer">
       <p class="mobile-menu-tag">Essential Earth Solutions</p>
       <p class="mobile-menu-brand">California Dirt Co.</p>
     </div>
+
   </div>
 
+
   <!-- PAGE -->
-  <div class="page">
+  <main class="page">
+
     <div class="page-inner">
 
+      <!-- PAGE HEADER -->
       <p class="page-tag">Get In Touch</p>
-      <h1 class="page-heading">Contact<span>Us.</span></h1>
 
+      <h1 class="page-heading">
+        Contact<span>Us.</span>
+      </h1>
+
+
+      <!-- CONTACT GRID -->
       <div class="contact-grid">
 
-       <!-- FORM -->
-<div class="form-block">
-  <div class="form-title">Send a Message</div>
-  <p class="form-sub">
-    For partnership inquiries, operator opportunities, and regional expansion questions.
-  </p>
+        <!-- FORM -->
+        <div class="form-block">
 
-  <form action="https://formspree.io/f/mdawvepz" method="POST">
-    
-    <!-- Hidden config -->
-    <input type="hidden" name="_subject" value="New Inquiry - TV Dirt Co">
+          <div class="form-title">Send a Message</div>
 
-    <div class="form-row">
-      <div class="form-group">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="First Name" placeholder="First" required />
-      </div>
-      <div class="form-group">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="Last Name" placeholder="Last" required />
-      </div>
-    </div>
+          <p class="form-sub">
+            For partnership inquiries, operator opportunities, and regional expansion questions.
+          </p>
 
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="Email" placeholder="you@company.com" required />
-    </div>
+          <form
+            action="https://formspree.io/f/mdawvepz"
+            method="POST"
+          >
 
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="Phone" placeholder="(555) 000-0000" />
-    </div>
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Inquiry - California Dirt Co."
+            >
 
-    <div class="form-group">
-      <label for="inquiry">Inquiry Type</label>
-      <select id="inquiry" name="Inquiry Type" required>
-        <option value="" disabled selected>Select one</option>
-        <option value="Operator / Partnership Opportunity">Operator / Partnership Opportunity</option>
-        <option value="Regional Expansion Inquiry">Regional Expansion Inquiry</option>
-        <option value="Investor Relations">Investor Relations</option>
-        <option value="Media / Press">Media / Press</option>
-        <option value="General Inquiry">General Inquiry</option>
-      </select>
-    </div>
+            <div class="form-row">
 
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="Message" rows="4" placeholder="How can we help?" required></textarea>
-    </div>
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input
+                  type="text"
+                  id="fname"
+                  name="First Name"
+                  placeholder="First"
+                  autocomplete="given-name"
+                  required
+                >
+              </div>
 
-    <button type="submit">Submit</button>
-  </form>
-</div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input
+                  type="text"
+                  id="lname"
+                  name="Last Name"
+                  placeholder="Last"
+                  autocomplete="family-name"
+                  required
+                >
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="Email"
+                placeholder="you@company.com"
+                autocomplete="email"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="Phone"
+                placeholder="(555) 000-0000"
+                autocomplete="tel"
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="inquiry">Inquiry Type</label>
+
+              <select
+                id="inquiry"
+                name="Inquiry Type"
+                required
+              >
+                <option value="" disabled selected>Select one</option>
+                <option value="Operator / Partnership Opportunity">
+                  Operator / Partnership Opportunity
+                </option>
+                <option value="Regional Expansion Inquiry">
+                  Regional Expansion Inquiry
+                </option>
+                <option value="Investor Relations">
+                  Investor Relations
+                </option>
+                <option value="Media / Press">
+                  Media / Press
+                </option>
+                <option value="General Inquiry">
+                  General Inquiry
+                </option>
+              </select>
+            </div>
+
 
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" placeholder="Tell us about your inquiry..." required></textarea>
+
+              <textarea
+                id="message"
+                name="Message"
+                rows="5"
+                placeholder="How can we help?"
+                required
+              ></textarea>
             </div>
 
-            <button type="submit" class="form-submit">Send Message →</button>
+
+            <button
+              type="submit"
+              class="form-submit"
+            >
+              Send Message
+            </button>
+
           </form>
 
-          <!-- Success state -->
-          <div class="form-success" id="form-success">
-            <svg viewBox="0 0 48 48" fill="none" stroke="#7EC8A0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="24" cy="24" r="22"/>
-              <polyline points="14,24 21,31 34,17"/>
-            </svg>
-            <div class="form-success-title">Message Sent.</div>
-            <p class="form-success-body">We'll be in touch shortly.<br>California Dirt Co. — Essential Earth Solutions.</p>
-          </div>
         </div>
+
 
         <!-- RIGHT COLUMN -->
         <div class="contact-info">
 
-  <div class="info-block">
-    <div class="info-label">General Inquiries</div>
-    <a href="mailto:info@tvdirtco.com" class="info-value">
-      info@californiadirtco.com
-    </a>
-    <p class="info-detail">
-      For partnership, operator, and expansion inquiries. We respond within one business day.
-    </p>
-  </div>
-
-</div>
-
+          <!-- GENERAL INQUIRIES -->
           <div class="info-block">
+
+            <div class="info-label">General Inquiries</div>
+
+            <a
+              href="mailto:info@californiadirtco.com"
+              class="info-value"
+            >
+              info@californiadirtco.com
+            </a>
+
+            <p class="info-detail">
+              For partnership, operator, and expansion inquiries.
+              We respond within one business day.
+            </p>
+
+          </div>
+
+
+          <!-- HEADQUARTERS -->
+          <div class="info-block">
+
             <div class="info-label">Headquarters</div>
-            <div class="info-value" style="cursor:default;">Temecula, California</div>
-            <p class="info-detail">Operating across Southern California with regional companies serving Temecula Valley, Orange County, and expanding statewide.</p>
-          </div>
 
-          <div class="info-block">
-            <div class="info-label">Regional Companies</div>
-            <ul class="regional-list">
-              <li class="regional-item">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <div class="regional-dot" style="background:#FF6B35;"></div>
-                  <span class="regional-name">Temecula Valley Dirt Co.</span>
-                </div>
-                <a href="https://www.tvdirtco.com" target="_blank" rel="noopener" class="regional-link">
-                  Visit
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg>
-                </a>
-              </li>
-              <li class="regional-item">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <div class="regional-dot" style="background:#4A90A4;"></div>
-                  <span class="regional-name">Orange County Dirt Co.</span>
-                </div>
-                <a href="https://www.tvdirtco.com/orange-county.html" target="_blank" rel="noopener" class="regional-link">
-                  Visit
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg>
-                </a>
-              </li>
-              <li class="regional-item">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <div class="regional-dot" style="background:#C8A96E;"></div>
-                  <span class="regional-name">San Diego Dirt Co.</span>
-                </div>
-                <a href="https://www.sandiegodirtco.com" target="_blank" rel="noopener" class="regional-link">Visit<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></a>
-              </li>
-              <li class="regional-item">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <div class="regional-dot" style="background:#7A9E5A;"></div>
-                  <span class="regional-name">North County Dirt Co.</span>
-                </div>
-                <a href="https://www.northcountydirtco.com" target="_blank" rel="noopener" class="regional-link">Visit<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></a>
-              </li>
-              <li class="regional-item">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <div class="regional-dot" style="background:#8B3A3A;"></div>
-                  <span class="regional-name">Inland Empire Dirt Co.</span>
-                </div>
-                <a href="https://www.inlandempiredirtco.com" target="_blank" rel="noopener" class="regional-link">Visit<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></a>
-              </li>
-              <li class="regional-item">
-                <div style="display:flex; align-items:center; gap:10px;">
-                  <div class="regional-dot" style="background:#C4A35A;"></div>
-                  <span class="regional-name">Los Angeles Dirt Co.</span>
-                </div>
-                <a href="https://www.losangelesdirtco.com" target="_blank" rel="noopener" class="regional-link">Visit<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13L13 3M13 3H6M13 3v7"/></svg></a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="info-block">
-            <div class="info-label">Follow</div>
-            <div style="display:flex; gap:24px; margin-top:4px;">
-              <a href="https://instagram.com/californiadirtco" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#F4F1EB'" onmouseout="this.style.color='#7A7670'">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
-                Instagram
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#F4F1EB'" onmouseout="this.style.color='#7A7670'">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                LinkedIn
-              </a>
+            <div
+              class="info-value"
+              style="cursor:default;"
+            >
+              Temecula, California
             </div>
+
+            <p class="info-detail">
+              California Dirt Co. is headquartered in Temecula and is building
+              a network of regional earthwork companies across California.
+            </p>
+
+          </div>
+
+
+          <!-- REGIONAL COMPANIES -->
+          <div class="info-block">
+
+            <div class="info-label">Regional Companies</div>
+
+            <ul class="regional-list">
+
+              <!-- TEMECULA -->
+              <li class="regional-item">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div
+                    class="regional-dot"
+                    style="background:#FF6B35;"
+                  ></div>
+
+                  <span class="regional-name">
+                    Temecula Valley Dirt Co.
+                  </span>
+                </div>
+
+                <a
+                  href="https://www.tvdirtco.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="regional-link"
+                >
+                  Visit
+
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 13L13 3M13 3H6M13 3v7"/>
+                  </svg>
+                </a>
+
+              </li>
+
+
+              <!-- ORANGE COUNTY -->
+              <li class="regional-item">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div
+                    class="regional-dot"
+                    style="background:#C8A96E;"
+                  ></div>
+
+                  <span class="regional-name">
+                    Orange County Dirt Co.
+                  </span>
+                </div>
+
+                <a
+                  href="https://www.ocdirtco.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="regional-link"
+                >
+                  Visit
+
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 13L13 3M13 3H6M13 3v7"/>
+                  </svg>
+                </a>
+
+              </li>
+
+
+              <!-- SAN DIEGO -->
+              <li class="regional-item">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div
+                    class="regional-dot"
+                    style="background:#C8A96E;"
+                  ></div>
+
+                  <span class="regional-name">
+                    San Diego Dirt Co.
+                  </span>
+                </div>
+
+                <a
+                  href="https://www.sandiegodirtco.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="regional-link"
+                >
+                  Visit
+
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 13L13 3M13 3H6M13 3v7"/>
+                  </svg>
+                </a>
+
+              </li>
+
+
+              <!-- NORTH COUNTY -->
+              <li class="regional-item">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div
+                    class="regional-dot"
+                    style="background:#7A9E5A;"
+                  ></div>
+
+                  <span class="regional-name">
+                    North County Dirt Co.
+                  </span>
+                </div>
+
+                <a
+                  href="https://www.northcountydirtco.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="regional-link"
+                >
+                  Visit
+
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 13L13 3M13 3H6M13 3v7"/>
+                  </svg>
+                </a>
+
+              </li>
+
+
+              <!-- INLAND EMPIRE -->
+              <li class="regional-item">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div
+                    class="regional-dot"
+                    style="background:#8B3A3A;"
+                  ></div>
+
+                  <span class="regional-name">
+                    Inland Empire Dirt Co.
+                  </span>
+                </div>
+
+                <a
+                  href="https://www.inlandempiredirtco.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="regional-link"
+                >
+                  Visit
+
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 13L13 3M13 3H6M13 3v7"/>
+                  </svg>
+                </a>
+
+              </li>
+
+
+              <!-- LOS ANGELES -->
+              <li class="regional-item">
+
+                <div style="display:flex; align-items:center; gap:10px;">
+                  <div
+                    class="regional-dot"
+                    style="background:#C4A35A;"
+                  ></div>
+
+                  <span class="regional-name">
+                    Los Angeles Dirt Co.
+                  </span>
+                </div>
+
+                <a
+                  href="https://www.losangelesdirtco.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="regional-link"
+                >
+                  Visit
+
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.75"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 13L13 3M13 3H6M13 3v7"/>
+                  </svg>
+                </a>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <!-- FOLLOW -->
+          <div class="info-block">
+
+            <div class="info-label">Follow</div>
+
+            <div style="display:flex; gap:24px; margin-top:4px;">
+
+              <a
+                href="https://instagram.com/californiadirtco"
+                target="_blank"
+                rel="noopener noreferrer"
+                style="display:flex; align-items:center; gap:8px; font-family:'Barlow Condensed',sans-serif; font-weight:600; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--cream-muted); text-decoration:none; transition:color 0.2s;"
+                onmouseover="this.style.color='#F4F1EB'"
+                onmouseout="this.style.color='#7A7670'"
+              >
+
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                </svg>
+
+                Instagram
+
+              </a>
+
+            </div>
+
           </div>
 
         </div>
+
       </div>
+
 
       <!-- STATEMENT -->
       <div class="statement">
-        <p class="statement-text">Operator inquiries welcome.<br>We are building California's earthwork platform.</p>
-        <p class="statement-sub">If you run a regional excavation operation and want to explore what being part of the California Dirt Co. network looks like — reach out. We are always looking for the right operators in the right markets.</p>
+
+        <p class="statement-text">
+          Operator inquiries welcome.<br>
+          We are building California's earthwork platform.
+        </p>
+
+        <p class="statement-sub">
+          If you run a regional excavation operation and want to explore
+          what being part of the California Dirt Co. network looks like,
+          reach out. We are always looking for the right operators in
+          the right markets.
+        </p>
+
       </div>
 
     </div>
-  </div>
+
+  </main>
+
 
   <!-- FOOTER -->
   <footer>
+
     <div class="footer-inner">
+
       <div class="footer-brand">
-        <img src="assets/images/caldirtco-mark-cream.svg" class="footer-mark" alt="California Dirt Co." />
-        <span class="footer-name">California Dirt Co.</span>
+
+        <img
+          src="assets/images/caldirtco-mark-cream.svg"
+          class="footer-mark"
+          alt="California Dirt Co."
+        >
+
+        <span class="footer-name">
+          California Dirt Co.
+        </span>
+
       </div>
-      <p class="footer-copy">© 2026 California Dirt Co. — Essential Earth Solutions</p>
+
+      <p class="footer-copy">
+        © 2026 California Dirt Co. — Essential Earth Solutions
+      </p>
+
     </div>
+
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    function handleSubmit(e) {
-      e.preventDefault();
-      const form = document.getElementById('contact-form');
-      const success = document.getElementById('form-success');
 
-      // Get form data
-      const data = {
-        name: document.getElementById('fname').value + ' ' + document.getElementById('lname').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        inquiry: document.getElementById('inquiry').value,
-        message: document.getElementById('message').value
-      };
+  <!-- NAVIGATION SCRIPT -->
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-      // Build mailto link as fallback
-      const subject = encodeURIComponent('California Dirt Co. — ' + document.getElementById('inquiry').options[document.getElementById('inquiry').selectedIndex].text);
-      const body = encodeURIComponent(
-        'Name: ' + data.name + '\n' +
-        'Email: ' + data.email + '\n' +
-        'Phone: ' + data.phone + '\n' +
-        'Inquiry: ' + data.inquiry + '\n\n' +
-        'Message:\n' + data.message
+    function toggleMenu() {
+      const isOpen = mobileMenu.classList.toggle('open');
+
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      hamburger.setAttribute(
+        'aria-label',
+        isOpen ? 'Close menu' : 'Open menu'
       );
+    }
 
-      // Open mailto
-      window.location.href = 'mailto:evan@tvdir
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Open menu');
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('.mobile-nav-links a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
+
+</body>
+</html>
